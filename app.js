@@ -16,13 +16,13 @@ var app = express();
     await sequelize.authenticate();
     console.log('Connection to the database is successfull!');
   } catch (error) {
-    console.error('Error connecting to the database: ', error);
+    console.error('Unable to connect to the database: ', error);
   }
 }) ();
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
-app.set('view engine', 'jade');
+app.set('view engine', 'pug');
 
 app.use(logger('dev'));
 app.use(express.json());
