@@ -1,15 +1,15 @@
 extends layout
 
 block content
-  h1 Books 
+  h1 Books
   p 
     a(class="button" href="/books/new") Create New Book 
-  table
+  table 
     tr 
       th Title 
       th Author 
       th Genre 
-      the Year 
+      th Year 
     each book in books 
       tr 
         td 

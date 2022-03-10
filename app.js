@@ -3,22 +3,21 @@ var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
-
+const sequelize = require('./models').sequelize;
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
-const sequelize = require('./models').sequelize;
 
 var app = express();
 
-(async () => {
+(async ()=> {
   try {
     sequelize.sync();
     await sequelize.authenticate();
-    console.log('Connection to the database is successfull!');
+    console.log('Connection to the database is successful!');
   } catch (error) {
-    console.error('Unable to connect to the database: ', error);
+    console.error('Error connecting to the database: ', error);
   }
-}) ();
+})();
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -49,13 +48,13 @@ app.use(function(err, req, res, next) {
   res.render('error');
 });
 
-//404 error handlers
+//404 error handler
 app.use((req, res, next) => {
-  console.log('404 error: Page not found');
+  console.log('404 error: page not found');
   res.status(404).render('error');
 });
 
-// global error handler 
+//global error handler
 app.use((err, req, res, next) => {
   if (err) {
     console.log('Global error handler called', err)
@@ -63,11 +62,9 @@ app.use((err, req, res, next) => {
   if (err.status === 404) {
     res.status(404).render('page-not-found', {err});
   } else {
-    err.messge = err.message || 'Sorry! We could not find the page your were looking for'
+    err.message = err.message || "Sorry, We could not find the page you were looking for"
     res.status(err.status || 500).render('error', {err});
   }
 });
-
-
 
 module.exports = app;
