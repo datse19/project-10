@@ -1,11 +1,11 @@
 
 body {
-  padding: 10px 50px 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  padding: 30px 50px 50px;
+  font: 18px "Lucida Grande", Helvetica, Arial, sans-serif;
 }
 
 a {
-  color: #10b9fc;
+  color: #12e7dd;
   text-decoration: none;
   font-weight: bold;
   transition: 0.4s;
@@ -17,7 +17,7 @@ a {
 
 a.button, input[type=submit] {
   color: white;
-  background: #048063;
+  background: #d0d337;
   font-family: "Lucida Grande", Helvetica, Arial, sans-serif;
   padding: 10px 14px 12px;
   font-size: 14px;
@@ -35,7 +35,7 @@ input[type=submit] {
 }
 
   a.button:hover, input[type=submit]:hover {
-    background-color: #048063;
+    background-color: #d0d337;
   }
 
 p {
@@ -83,9 +83,9 @@ input {
   padding: 10px;
   font-size: 14px;
   border-radius: 4px;
-  border-color: #fffafa;
+  border-color: lightsalmon;
   border-style: solid;
-  transition: 0.4s;
+  transition: 0.3s;
 }
 
 input[type=text] {
